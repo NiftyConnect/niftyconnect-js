@@ -87,7 +87,7 @@ export const makeOrder = async (params: MakeOrderParams) => {
     '0x0000000000000000000000000000000000000000000000000000000000000000',
   ];
 
-  if (paymentToken !== ZERO_ADDRESS) {
+  if (side === Side.Buy && paymentToken !== ZERO_ADDRESS) {
     const allowance = await getErc20Allowance({
       address: makerAddress,
       contractAddress: contracts.NiftyConnectTokenTransferProxy[chainId],
