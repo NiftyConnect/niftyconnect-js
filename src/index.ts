@@ -104,7 +104,7 @@ export const makeOrder = async (params: MakeOrderParams) => {
 
   const contract = buildContract({
     abi: NiftyConnectExchangeAbi,
-    contractAddress: contracts.NiftyConnectExchange[1],
+    contractAddress: contracts.NiftyConnectExchange[chainId],
   });
 
   return await contract.makeOrder_(
@@ -349,7 +349,7 @@ export const takeOrder = async ({
 
   const contract = buildContract({
     abi: NiftyConnectExchangeAbi,
-    contractAddress: contracts.NiftyConnectExchange[1],
+    contractAddress: contracts.NiftyConnectExchange[chainId],
   });
 
   if (paymentToken === ZERO_ADDRESS) {
