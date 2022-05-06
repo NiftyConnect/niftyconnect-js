@@ -23,10 +23,19 @@ $ yarn add niftyconnect-js
 
 - **For Ethersjs:** Just call the above methods directly
 
+```bash
+  const tx = await makerOrder(params)
+  await tx.wait
+
+  const tx = await cancelOrder(params)
+  await tx.wait
+
+  const tx = await takeOrder(params)
+  await tx.wait
+```
+
 - **For Web3js**
 
 ## Contributing
 
-Contributions to the Niftyconnect JavaScript SDK are welcome. Please ensure
-that you have tested the changes with a local client and have added unit test
-coverage for your code.
+Contributions to the Niftyconnect JavaScript SDK are welcome.
