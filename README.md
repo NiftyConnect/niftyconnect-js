@@ -35,6 +35,7 @@ Make fixed price order
     expireTime:moment('xxxx'),
     tokenId: 1111,
     amount: 1,
+    chainId:1,
     side: 1, // sell=1, buy=0
     saleKind: 0, //FixedPrice=0, TimedAuction = 1
     tokenStandard: 1, // erc1155=1, erc721=0
