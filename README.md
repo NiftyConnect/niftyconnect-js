@@ -23,7 +23,7 @@ $ yarn add niftyconnect-js
 
 - **For Ethersjs:** Just call the above methods directly
 
-```bash
+```JavaScript
   const tx = await makerOrder(params)
   await tx.wait
 
