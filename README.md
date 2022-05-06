@@ -21,7 +21,7 @@ $ yarn add niftyconnect-js
 
 > It uses ethersjs and ethereum provider(provided by metamask) by default
 
-Make an fixed price order
+Make fixed price order
 
 ```JavaScript
   import { makeOrder } from 'niftyconnect-js'
