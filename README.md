@@ -41,7 +41,7 @@ Make fixed price order
     orderType: 'Normal', //'Normal' | 'Collection' | 'Trait'
   }
 
-  const tx = makeOrder(params)
+  const tx = await makeOrder(params)
 ```
 
 ## Contributing
