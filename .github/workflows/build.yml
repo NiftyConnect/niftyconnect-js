@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1.4.4
+        with:
+          node-version: 16.x
+
+      - name: Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: |
+          yarn build
+
+      - name: Deploy to NPM
+        run: yarn semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
