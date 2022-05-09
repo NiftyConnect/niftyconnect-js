@@ -44,7 +44,6 @@ export const makeOrder = async (params: MakeOrderParams) => {
     makerAddress, // maker
     ZERO_ADDRESS, // taker
     makerRelayerFeeRecipient, // makerRelayerFeeRecipient
-    ZERO_ADDRESS, // takerRelayerFeeRecipient
     nftAddress, // nftAddress
     ZERO_ADDRESS, // staticTarget
     paymentToken, // paymentToken
@@ -158,7 +157,6 @@ export const cancelOrder = async ({
     maker, // maker
     taker, // taker
     makerRelayerFeeRecipient, // makerRelayerFeeRecipient
-    ZERO_ADDRESS, // takerRelayerFeeRecipient
     nftAddress, // nftAddress
     staticTarget, // staticTarget
     paymentToken, // paymentToken
