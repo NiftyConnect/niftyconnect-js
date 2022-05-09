@@ -796,7 +796,7 @@ export const NiftyConnectExchangeAbi = [
     inputs: [
       {
         name: 'addrs',
-        type: 'address[10]',
+        type: 'address[9]',
       },
       {
         name: 'uints',
@@ -839,7 +839,7 @@ export const NiftyConnectExchangeAbi = [
     inputs: [
       {
         name: 'addrs',
-        type: 'address[10]',
+        type: 'address[9]',
       },
       {
         name: 'uints',
@@ -882,7 +882,7 @@ export const NiftyConnectExchangeAbi = [
     inputs: [
       {
         name: 'addrs',
-        type: 'address[10]',
+        type: 'address[9]',
       },
       {
         name: 'uints',
@@ -925,7 +925,7 @@ export const NiftyConnectExchangeAbi = [
     inputs: [
       {
         name: 'addrs',
-        type: 'address[10]',
+        type: 'address[9]',
       },
       {
         name: 'uints',
@@ -963,7 +963,7 @@ export const NiftyConnectExchangeAbi = [
     inputs: [
       {
         name: 'addrs',
-        type: 'address[10]',
+        type: 'address[9]',
       },
       {
         name: 'uints',
@@ -1001,7 +1001,7 @@ export const NiftyConnectExchangeAbi = [
     inputs: [
       {
         name: 'addrs',
-        type: 'address[10]',
+        type: 'address[9]',
       },
       {
         name: 'uints',
@@ -1222,4 +1222,4 @@ export const NiftyConnectExchangeAbi = [
     stateMutability: 'payable',
     type: 'function',
   },
-]
+];
