@@ -15,6 +15,7 @@ import {
   buildCalldata,
   buildContract,
   decodeCalldata,
+  encodeFunctionAbi,
   getErc20Allowance,
   getMerkleValidatorSelector,
   getReplacementPattern,
@@ -349,6 +350,21 @@ export const takeOrder = async ({
     abi: NiftyConnectExchangeAbi,
     contractAddress: contracts.NiftyConnectExchange[chainId],
   });
+
+  const data = encodeFunctionAbi(NiftyConnectExchangeAbi, 'takeOrder_', [
+    addrs,
+    uints,
+    sidesKindsHowToCalls,
+    buyCalldata,
+    sellCalldata,
+    buyReplacePattern, // bytes replacementPatternSell,
+    sellReplacePattern, // bytes replacementPatternBuy,
+    [], // bytes staticExtradataBuy
+    [], // bytes staticExtradataSell
+    '0x'.padEnd(66, '0'), // bytes32 rssMetadata
+  ]);
+
+  console.log(data);
 
   if (paymentToken === ZERO_ADDRESS) {
     return await contract.takeOrder_(

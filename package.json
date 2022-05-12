@@ -1,7 +1,7 @@
 {
   "version": "0.0.0-development",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",

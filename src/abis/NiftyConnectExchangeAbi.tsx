@@ -591,6 +591,16 @@ export const NiftyConnectExchangeAbi = [
       },
       {
         indexed: false,
+        name: 'makerRelayerFeeRecipient',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        name: 'takerRelayerFeeRecipient',
+        type: 'address',
+      },
+      {
+        indexed: false,
         name: 'price',
         type: 'uint256',
       },

@@ -188,4 +188,4 @@ export const MerkleValidatorAbi = [
     stateMutability: 'pure',
     type: 'function',
   },
-]
+];

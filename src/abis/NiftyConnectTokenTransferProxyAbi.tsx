@@ -1,5 +1,19 @@
 export const NiftyConnectTokenTransferProxyAbi = [
   {
+    constant: true,
+    inputs: [],
+    name: 'initialized',
+    outputs: [
+      {
+        name: '',
+        type: 'bool',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
     constant: false,
     inputs: [
       {
@@ -33,7 +47,7 @@ export const NiftyConnectTokenTransferProxyAbi = [
   {
     constant: true,
     inputs: [],
-    name: 'registry',
+    name: 'exchangeAddress',
     outputs: [
       {
         name: '',
@@ -45,14 +59,17 @@ export const NiftyConnectTokenTransferProxyAbi = [
     type: 'function',
   },
   {
+    constant: false,
     inputs: [
       {
-        name: 'registryAddr',
+        name: '_exchangeAddress',
         type: 'address',
       },
     ],
+    name: 'initialize',
+    outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
-    type: 'constructor',
+    type: 'function',
   },
-]
+];
