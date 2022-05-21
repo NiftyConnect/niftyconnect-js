@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
 import secureRandom from 'secure-random';
-import { NiftyConnectExchangeAbi } from './abis';
+import { NiftyConnectExchangeAbi, RoyaltyRegisterHubAbi } from './abis';
 import { contracts, ZERO_ADDRESS } from './constants';
 import {
   CancelOrderParams,
@@ -394,4 +394,36 @@ export const takeOrder = async ({
       '0x'.padEnd(66, '0') // bytes32 rssMetadata
     );
   }
+};
+
+export const setRoyalty = async ({
+  nftAddress,
+  royaltyRate, //0~10
+  royaltyReceiverAddress,
+  chainId = 1,
+}: {
+  nftAddress: string;
+  royaltyRate: string | number;
+  royaltyReceiverAddress: string;
+  chainId?: number;
+}) => {
+  if (royaltyRate > 10 || royaltyRate < 0) {
+    throw new Error('Invalid royalty rate, it should between 0 and 10');
+  }
+
+  const calculateRoyaltyRate = new BigNumber(royaltyRate)
+    .times(100)
+    .dp(1, 1)
+    .toString();
+
+  const contract = buildContract({
+    abi: RoyaltyRegisterHubAbi,
+    contractAddress: contracts.RoyaltyRegisterHub[chainId],
+  });
+
+  return await contract.setRoyaltyRateFromNFTOwners(
+    nftAddress,
+    calculateRoyaltyRate,
+    royaltyReceiverAddress
+  );
 };
