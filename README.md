@@ -4,6 +4,7 @@ with Niftyconnect contracts. It includes the following three methods.
 - **makeOrder** - Approve an order and optionally mark it for orderbook inclusion
 - **cancelOrder** - Cancel an order, preventing it from being matched
 - **takeOrder** - Atomically match two orders, ensuring validity of the match, and execute all associated state transitions
+- **setRoyalty** - Set percentage-based royalty fee by collection owner
 
 You can find more detailed documentation in our
 [Documentation](https://github.com/NiftyConnect/document)
